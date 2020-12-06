@@ -3,15 +3,15 @@ package com.xaltius.be.service;
 import com.xaltius.be.exception.IncorrectAgeException;
 import com.xaltius.be.model.Colors;
 import com.xaltius.be.model.Person;
-import com.xaltius.be.model.PersonResponse;
+import com.xaltius.be.model.PersonColor;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PersonServiceImpl implements PersonService{
 
     @Override
-    public PersonResponse findPersonColorByAge(Person person) throws IncorrectAgeException {
-        return  PersonResponse.builder()
+    public PersonColor findPersonColorByAge(Person person) throws IncorrectAgeException {
+        return  PersonColor.builder()
                 .name(person.getName())
                 .age(person.getAge())
                 .colors(getColorByAge(person.getAge()))
