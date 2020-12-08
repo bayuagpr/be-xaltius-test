@@ -2,7 +2,15 @@ package com.xaltius.be.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.ServletRegistration;
+
 public class SpringWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    @Override
+    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+        super.customizeRegistration(registration);
+        registration.setInitParameter("throwExceptionIfNoHandlerFound", "true");
+    }
 
     @Override
     protected Class[] getServletConfigClasses() {

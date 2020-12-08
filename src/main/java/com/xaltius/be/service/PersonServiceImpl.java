@@ -1,24 +1,30 @@
 package com.xaltius.be.service;
 
 import com.xaltius.be.exception.IncorrectAgeException;
+import com.xaltius.be.exception.IncorrectNameException;
 import com.xaltius.be.model.Colors;
 import com.xaltius.be.model.Person;
 import com.xaltius.be.model.PersonColor;
 import org.springframework.stereotype.Service;
 
+import java.util.regex.Pattern;
+
 @Service
 public class PersonServiceImpl implements PersonService{
 
     @Override
-    public PersonColor findPersonColorByAge(Person person) throws IncorrectAgeException {
+    public PersonColor findPersonColorByAge(Person person) throws IncorrectAgeException, IncorrectNameException {
         return  PersonColor.builder()
-                .name(person.getName())
+                .name(checkNameValidity(person.getName()))
                 .age(person.getAge())
                 .colors(getColorByAge(person.getAge()))
                 .build();
     }
 
     private String getColorByAge(Integer age) throws IncorrectAgeException {
+        if(age == null){
+            throw new NullPointerException("Age is required to be filled");
+        }
         if(age>=1){
             if(age<=20){
                 return Colors.LIGHTBLUE.getHexCode();
@@ -29,5 +35,27 @@ public class PersonServiceImpl implements PersonService{
             }
         }
         throw new IncorrectAgeException("Age "+age+" doesn't meet requirement");
+    }
+
+    private String checkNameValidity(String name) throws IncorrectNameException {
+        String regexCheckHasNumber = "(.)*(\\d)(.)*";
+        Pattern patternHasNumber = Pattern.compile(regexCheckHasNumber);
+
+        String regexCheckHasSymbol = "[a-zA-Z0-9]*";
+        Pattern patternHasSymbol = Pattern.compile(regexCheckHasSymbol);
+
+        if(name.length()==0){
+            throw new IncorrectNameException("Name is required to be filled");
+        }
+
+        if(patternHasNumber.matcher(name).matches()){
+            throw new IncorrectNameException("Name cannot contain number");
+        }
+
+        if(!patternHasSymbol.matcher(name).matches()){
+            throw new IncorrectNameException("Name cannot contain symbol");
+        }
+
+        return name;
     }
 }
