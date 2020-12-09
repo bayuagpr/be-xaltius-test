@@ -41,7 +41,7 @@ public class PersonServiceImpl implements PersonService{
         String regexCheckHasNumber = "(.)*(\\d)(.)*";
         Pattern patternHasNumber = Pattern.compile(regexCheckHasNumber);
 
-        String regexCheckHasSymbol = "[a-zA-Z0-9]*";
+        String regexCheckHasSymbol = "^[a-zA-Z0-9 ]*$";
         Pattern patternHasSymbol = Pattern.compile(regexCheckHasSymbol);
 
         if(name.length()==0){
