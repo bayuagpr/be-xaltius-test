@@ -63,7 +63,7 @@ Maven required
 
 ### How to build
 
-- Run the development task: `mvn clean package`
+    `mvn clean package`
 
 ### How to run
 
