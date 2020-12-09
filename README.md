@@ -1,6 +1,8 @@
-# Developer Technical Test: Age Color Generator (Back-end)
+# Xaltius Developer Technical Test: (Back-end)
 
-This repository contains the source code for [Age Color Generator](https://xaltius-fe-test.netlify.app/) " back-end service. It contains all services necessary to expose endpoint and handling request.
+# Age Color Generator Apps
+
+This repository contains the source code for [Age Color Generator](https://xaltius-fe-test.netlify.app/) back-end service. It contains all services necessary to expose endpoint and handling request.
 
 ## Demo
 
