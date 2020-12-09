@@ -34,7 +34,7 @@ public class PersonServiceImpl implements PersonService{
                 return Colors.GREY.getHexCode();
             }
         }
-        throw new IncorrectAgeException("Age "+age+" doesn't meet requirement");
+        throw new IncorrectAgeException(age+" years old doesn't meet requirement for generating. Minimum age is 1 years old.");
     }
 
     private String checkNameValidity(String name) throws IncorrectNameException {
