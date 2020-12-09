@@ -4,7 +4,7 @@ This repository contains the source code for [Age Color Generator](https://xalti
 
 ## Demo
 
-Base URL: [https://xaltius-be-test.herokuapp.com](https://xaltius-be-test.herokuapp.com)
+Base URL: [https://xaltius-fe-test.netlify.app/](https://xaltius-be-test.herokuapp.com)
 
 - Endpoint: /process/age
 - Request body:
@@ -43,16 +43,11 @@ Base URL: [https://xaltius-be-test.herokuapp.com](https://xaltius-be-test.heroku
 
 ## Packages Structure
 
-.
-...
-├── com.xaltius.be
-├── config # Configuration for web and servlet
-├── controller # Mapping endpoint and attach the handler
-|── exception # Exception handing
-├── model # Model class
-└── service # Service handler
-
-    ...
+- config (Configuration for web and servlet)
+- controller (Mapping endpoint and attach the handler)
+- exception (Exception handing)
+- model (Model class)
+- service (Service handler)
 
 ## Getting started
 
