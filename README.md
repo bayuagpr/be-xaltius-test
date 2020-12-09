@@ -4,7 +4,7 @@ This repository contains the source code for [Age Color Generator](https://xalti
 
 ## Demo
 
-Base URL: [https://xaltius-fe-test.netlify.app/](https://xaltius-be-test.herokuapp.com)
+Base URL: [https://xaltius-be-test.herokuapp.com](https://xaltius-be-test.herokuapp.com)
 
 - Endpoint: /process/age
 - Request body:
