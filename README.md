@@ -53,6 +53,8 @@ Base URL: [https://xaltius-fe-test.netlify.app/](https://xaltius-be-test.herokua
 
 ### Setting up
 
+Maven required
+
 - Clone this repository: `git clone https://github.com/bayuagpr/be-xaltius-test.git`
 - Move into the project directory: `cd be-xaltius-test`
 - Install the dependencies: `mvn clean install`
